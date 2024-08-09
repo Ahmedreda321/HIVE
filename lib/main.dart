@@ -10,12 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'UbuntuMono'),
       debugShowCheckedModeBanner: false,
-      home:
-          //RemoteControlScreen(),
-          // AiMonitoringScreen(),
-          SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
