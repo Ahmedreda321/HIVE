@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           Icon(Icons.home, size: 30, color: Colors.white),
           Icon(Icons.equalizer, size: 30, color: Colors.white),
-          Icon(Icons.person, size: 30, color: Colors.white),
+          Icon(Icons.videocam, size: 30, color: Colors.white),
         ],
         color: primaryColor,
         buttonBackgroundColor: primaryColor,
@@ -88,42 +88,6 @@ class HomeBody extends StatelessWidget {
   }
 }
 
-class CustomBottomNavigationBar extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
-  const CustomBottomNavigationBar({
-    super.key,
-    required this.currentIndex,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: currentIndex,
-      onTap: onTap,
-      selectedItemColor: primaryColor,
-      unselectedItemColor: Colors.black,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home, color: primaryColor),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.equalizer, color: primaryColor),
-          label: 'Status',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person, color: primaryColor),
-          label: 'Monitoring',
-        ),
-      ],
-    );
-  }
-}
-
-// Page Title Widget
 class PageTitle extends StatelessWidget {
   final String title;
 
@@ -131,17 +95,15 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding:
-            EdgeInsets.all(SizeConfing.defaultSize! * 1.0), // Adjusted padding
-        child: Text(
-          title,
-          style: TextStyle(
-            fontSize: SizeConfing.defaultSize! * 2.4, // Adjusted font size
-            fontWeight: FontWeight.bold,
-            color: primaryColor,
-          ),
+    return Padding(
+      padding:
+          EdgeInsets.all(SizeConfing.defaultSize! * 1.0), // Adjusted padding
+      child: Text(
+        title,
+        style: TextStyle(
+          fontSize: SizeConfing.defaultSize! * 2.4, // Adjusted font size
+          fontWeight: FontWeight.bold,
+          color: primaryColor,
         ),
       ),
     );
